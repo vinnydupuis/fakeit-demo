@@ -12,10 +12,13 @@ int main(int argc, char *argv[]) {
     Logger logger;
     logger.log("Hello, World!");
 
+    printf("Real usage done\n");
+
 
 
 
     // Run the unit tests
-
-    return lest::run(specification, argc, argv);
+    int result = lest::run(specification, argc, argv);
+    printf("Test return code: %d\n", result);
+    return result;
 }

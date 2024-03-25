@@ -1,9 +1,13 @@
-cmake_minimum_required(VERSION 3.27)
-project(untitled)
+cmake_minimum_required(VERSION 3.22)
+
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_CXX_COMPILER "clang++")
+
+project(demo-fakeit)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(untitled main.cpp
+add_executable(demo-fakeit main.cpp
         Logger.cpp
         Logger.h
         test.cpp
@@ -15,6 +19,3 @@ add_executable(untitled main.cpp
 )
 
 add_compile_definitions(lest_FEATURE_AUTO_REGISTER)
-
-find_package(FakeIt REQUIRED)
-target_link_libraries(untitled PRIVATE FakeIt::FakeIt-standalone)
