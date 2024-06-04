@@ -21,10 +21,10 @@ CASE("Logger" "Log to file") {
     Logger logger;
 
     // Execute
-    logger.log("Allo!");
+    logger.log("Hello!");
 
     // Verify
     Verify(Method(mockFileSystem, fopen).Using(StrEq("log.txt"), StrEq("a"))).Once();
-    Verify(Method(mockFileSystem, fprintf).Using((FILE*)0x1234, StrEq("%s\n"), StrEq("Allo!"))).Once();
+    Verify(Method(mockFileSystem, fprintf).Using((FILE*)0x1234, StrEq("%s\n"), StrEq("Hello!"))).Once();
     Verify(Method(mockFileSystem, fclose).Using((FILE*)0x1234)).Once();
 }

@@ -4,8 +4,8 @@
 
 class IFileSystem {
 public:
-    virtual FILE *fopen(const char *string, const char *string1) = 0;
-    virtual int fprintf(FILE *s, const char *f, const char *message) = 0;
+    virtual FILE *fopen(const char *filename, const char *mode) = 0;
+    virtual int fprintf(FILE *f, const char *format, const char *message) = 0;
     virtual void fclose(FILE *f) = 0;
 };
 

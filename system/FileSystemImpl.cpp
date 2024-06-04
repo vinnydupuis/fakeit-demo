@@ -2,12 +2,12 @@
 
 IFileSystem* FileSystem;
 
-FILE *FileSystemImpl::fopen(const char *string, const char *string1) {
-    return ::fopen(string, string1);
+FILE *FileSystemImpl::fopen(const char *filename, const char *mode) {
+    return ::fopen(filename, mode);
 }
 
-int FileSystemImpl::fprintf(FILE *s, const char *f, const char *message) {
-    return ::fprintf(s, f, message);
+int FileSystemImpl::fprintf(FILE *f, const char *format, const char *message) {
+    return ::fprintf(f, format, message);
 }
 
 void FileSystemImpl::fclose(FILE *f) {

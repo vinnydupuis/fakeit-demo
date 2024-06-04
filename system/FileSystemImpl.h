@@ -4,7 +4,7 @@
 
 class FileSystemImpl : public IFileSystem {
 public:
-    FILE *fopen(const char *string, const char *string1) override;
-    int fprintf(FILE *s, const char *f, const char *message) override;
+    FILE *fopen(const char *filename, const char *mode) override;
+    int fprintf(FILE *f, const char *format, const char *message) override;
     void fclose(FILE *f) override;
 };
